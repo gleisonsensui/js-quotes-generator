@@ -9,6 +9,9 @@ export default class QuoteController {
     this.authorOutput = document.querySelector('#author-output');
     this.btnGenerator = document.querySelector('#btn-generator');
     this.btnSend = document.querySelector('#btn-send');
+
+    this.btnGeneratorAction();
+    this.btnSendAction();
   }
 
   saveQuote() {
@@ -17,23 +20,33 @@ export default class QuoteController {
       author: this.authorEntry.value,
     };
     this.quote.addQuote(quoteNew);
+    this.cleanEntry();
   }
 
-  getQuote() {
-    let index = Math.floor(Math.random() * this.quote.sizeQuote()) - 1;
-    this.quoteOutput.textContent = this.quote.getQuoteIndex().quote;
-    this.authorOutput.textContent = this.quote.getQuoteIndex().author;
+  getQuote() {    
+    let [citacao] = this.quote.getQuoteByIndex(this.indexGenerator());
+    this.quoteOutput.textContent = citacao.quote;
+    this.authorOutput.textContent = citacao.author;
   }
 
   btnSendAction() {
     this.btnSend.addEventListener('click', () => {
-        this.saveQuote();
-    })
+      this.saveQuote();
+    });
   }
 
   btnGeneratorAction() {
     this.btnGenerator.addEventListener('click', () => {
-        this.getQuote();
-    })
+      this.getQuote();
+    });
+  }
+
+  cleanEntry() {
+    this.quoteEntry.value = '';
+    this.authorEntry.value = '';
+  }
+
+  indexGenerator() {
+    return Math.floor(Math.random() * this.quote.sizeQuote());
   }
 }

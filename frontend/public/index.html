@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Citações</title>
-</head>
-<body>
+  </head>
+  <body>
+    <header></header>
     <main class="container">
-        <div class="quote">
-            <div class="quote-group">
-                <label for="quote-entry">Citação</label>
-                <input type="text" name="quote" id="quote-entry">
-            </div>
-            <div class="quote-group">
-                <label for="author-entry">Autor</label>
-                <input type="text" name="author" id="author-entry">
-            </div>
-            <p class="author"></p>
-            <button class="btn-quote" id="btn-send">Enviar</button>
+      <div class="quote">
+        <div class="quote-group">
+          <label for="quote-entry">Citação</label>
+          <input type="text" name="quote" id="quote-entry" />
         </div>
-    </main>    
-</body>
+        <div class="quote-group">
+          <label for="author-entry">Autor</label>
+          <input type="text" name="author" id="author-entry" />
+        </div>
+        <p class="author"></p>
+        <button class="btn-quote" id="btn-send">Enviar</button>
+      </div>
+
+      <div class="quote q-top">
+        <p class="text" id="quote-output">
+          CLique no botão para gerar uma citação interessante...
+        </p>
+        <p class="author" id="author-output"></p>
+        <button class="btn-quote" id="btn-generator">Gerar citação</button>
+      </div>
+    </main>
+
+  </body>
 </html>

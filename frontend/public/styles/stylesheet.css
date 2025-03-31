@@ -21,6 +21,9 @@ body {
   color: #fff;
 }
 
+.q-top {
+  margin-top: 10px;
+}
 .quote .text {
   font-style: italic;
   margin-bottom: 1.4rem;
@@ -40,13 +43,17 @@ body {
   padding: 0.8rem 1.2rem;
   cursor: pointer;
   transition: 0.4s;
+  margin-top: 10px;
 }
 
 .btn-quote:hover {
   background-color: #12520c;
 }
 
-.author-entry,
-.quote-entry {
+#author-entry,
+#quote-entry {
   width: 100%;
+  height: 1.5rem;
+  background-color: #333;
+  color: #fff;
 }

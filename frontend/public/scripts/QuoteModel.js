@@ -4,21 +4,21 @@ export default class QuoteModel {
       {
         quote:
           'Eu acredito no amor. Eu creio que pode existir alguma chance e eu sempre acho que pode ser diferente. Talvez essa seja a explicação de todas decepções.',
-        author: "Pequena sereia",
+        author: 'Pequena sereia',
       },
       {
         quote:
           'Creio no riso e nas lágrimas como antídotos contra o ódio e o terror.',
-        author: "Charles Chaplin",
+        author: 'Charles Chaplin',
       },
       {
         quote:
           'Seja como for o que penses, creio que é melhor dizê-lo com boas palavras.',
-        author: "Willian Shakespeare",
+        author: 'Willian Shakespeare',
       },
     ];
     this._quote = '';
-    this._author = '';    
+    this._author = '';
   }
 
   get quote() {
@@ -53,12 +53,10 @@ export default class QuoteModel {
     return this._quotesList.length;
   }
 
-  getQuoteIndex(index) {
-    return this._quotesList.filter((item, indexItem) => {
-      if (indexItem === index) {
-        return item[indexItem];
-      } else {
-        return `${index} não encontrado.`;
+  getQuoteByIndex(indexEntry) {
+    return this.quoteList.filter((item, index) => {
+      if (index === indexEntry) {
+        return item;
       }
     });
   }
